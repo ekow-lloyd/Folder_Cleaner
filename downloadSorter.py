@@ -2,7 +2,7 @@ import schedule
 import time
 from datetime import datetime
 import os
-import shutil
+import shutil, pprint
 
 
 def job():
@@ -19,25 +19,32 @@ def job():
     for files in content:
         if files.endswith('.pdf') or files.endswith('.csv'):
             shutil.move(os.path.join(source, files), os.path.join(pdf, files))
-            print(files, pdf + ": " + str(datetime.now()))
+            pprint.pprint(files, pdf + ": " + str(datetime.now()))
+            print()
         if files.endswith('.jpeg') or files.endswith('.mp4') or files.endswith('png'):
             shutil.move(os.path.join(source, files), os.path.join(media, files))
-            print(files, media + ": " + str(datetime.now()))
+            pprint.pprint(files, media + ": " + str(datetime.now()))
+            print()
         if files.endswith('.pptx'):
             shutil.move(os.path.join(source, files), os.path.join(ppt, files))
-            print(files, ppt + ": " + str(datetime.now()))
+            pprint.pprint(files, ppt + ": " + str(datetime.now()))
+            print()
         if files.endswith('.app') or files.endswith('.dmg'):
             shutil.move(os.path.join(source, files), os.path.join(apps, files))
-            print(files, apps + ": " + str(datetime.now()))
+            pprint.pprint(files, apps + ": " + str(datetime.now()))
+            print()
         if files.endswith('.docx') or files.endswith('.txt'):
             shutil.move(os.path.join(source, files), os.path.join(docs, files))
-            print(files, docs + ": " + str(datetime.now()))
+            pprint.pprint(files, docs + ": " + str(datetime.now()))
+            print()
         if files.endswith('.zip'):
             shutil.move(os.path.join(source, files), os.path.join(zips, files))
-            print(files, zips + ": " + str(datetime.now()))
+            pprint.pprint(files, zips + ": " + str(datetime.now()))
+            print()
         if files.endswith('.xlsx'):
             shutil.move(os.path.join(source, files), os.path.join(excel, files))
-            print(files, excel + ": " + str(datetime.now()))
+            pprint.pprint(files, excel + ": " + str(datetime.now()))
+            print()
             
     # print("Monitoring")
 
