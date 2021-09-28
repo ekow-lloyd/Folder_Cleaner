@@ -45,7 +45,7 @@ try:
                     pprint.pprint(files, excel + ": " + str(datetime.now()))
                     print()
                     
-        Job()
+        job()
 except (KeyboardInterrupt, FileNotFoundError):
     print("Interrupted")
 
